@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Dish 
+from .models import Dish, Account
 
 # Create your views here.
 
+def login(request):
+    accounts = Account.objects.all()
+    return render(request,'tapasapp/login.html', {'account':account})
 
 def better_menu(request):
     dish_objects = Dish.objects.all()
