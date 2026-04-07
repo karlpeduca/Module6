@@ -5,7 +5,7 @@ from .models import Dish, Account
 
 def login(request):
     accounts = Account.objects.all()
-    return render(request,'tapasapp/login.html', {'account':account})
+    return render(request,'tapasapp/login.html', {'account':Account})
 
 def better_menu(request):
     dish_objects = Dish.objects.all()
