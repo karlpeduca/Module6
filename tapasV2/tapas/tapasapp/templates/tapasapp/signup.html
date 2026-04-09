@@ -1,0 +1,22 @@
+{% extends "tapasapp/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username: </label>
+            <input type="text" class="form-control" id="username" name="username" required>
+            <label for="password">Password: </label>
+            <input type="password" class="form-control" id="password" name="password" required>
+            <button type="submit" class="btn btn-primary mt-3">Signup</button>
+            {% if message %}
+                <div class="alert alert-info mt-2">
+                    {{ message }}
+                </div>
+            {% endif %}
+        </div>
+    </form>
+</div>
+
+{% endblock %}
