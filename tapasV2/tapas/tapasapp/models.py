@@ -11,13 +11,17 @@ class Dish(models.Model):
     def __str__(self):
         return str(self.pk) + ": " + self.name
 
+
 class Account(models.Model):
     username = models.CharField(max_length=300)
     password = models.CharField(max_length=300)
+    objects = models.Manager()
 
     def getUsername(self):
-        return str(username)
+        return self.username
 
     def getPassword(self):
-        return str(password)
-    
+        return self.password
+
+    def __str__(self):
+        return self.username
