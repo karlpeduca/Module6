@@ -1,0 +1,13 @@
+{% extends "tapasapp/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <h1 class="mb-4">Welcome, {{ acc.username }}!</h1>
+
+    <div class="form-group">
+        <a class="btn btn-primary mt-3" href="{% url 'change_password' pk=acc.pk %}">Change password</a>
+        <a class="btn btn-danger mt-3" href="{% url 'delete_account' pk=acc.pk %}">Delete account</a>
+        <a class="btn btn-secondary mt-3" href="{% url 'basic_list' pk=acc.pk %}">Back</a>
+    </div>
+</div>
+{% endblock %}
