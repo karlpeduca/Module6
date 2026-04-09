@@ -3,12 +3,28 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="form-group">
-        <label for="username">Username: </label>
-        <input type="text" class="form-control" id="dusername" name="dusername">
-        <label for="password">Password: </label>
-        <input type="text" class="form-control" id="dpassword" name="dpassword">
-    </div>
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="username">Username: </label>
+            <input type="text" class="form-control" id="username" name="username" required>
+
+            <label for="password" class="mt-2">Password: </label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+
+        {% if message %}
+            <div class="alert alert-info mt-3" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary mt-3">Login</button>
+    </form>
+    <button type="button" class="btn btn-primary mt-3">
+        <a href="{% url 'signup' %}">Signup</a>
+    </button>
 </div>
 {% endblock %}
 
