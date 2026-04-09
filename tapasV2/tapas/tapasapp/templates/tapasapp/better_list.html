@@ -18,7 +18,7 @@
                                 <td> {{ d.name }} </td>
                                 <td> {{ d.prep_time }} </td>
                                 <td> {{ d.cook_time }} </td>
-                                <td><a href="{% url 'view_detail' pk=d.pk %}"  class="btn btn-dark">Details</button></td>
+                                <td><a href="{% url 'view_detail' pk=d.pk %}" class="btn btn-dark">Details</a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
